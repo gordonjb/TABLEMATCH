@@ -1,0 +1,468 @@
+# January 2006
+- https://www.cagematch.net/?id=1&nr=5157 # 1PW No Turning Back - Day 2
+# May 2006
+- https://www.cagematch.net/?id=1&nr=6544 # 1PW Know Your Enemy - Day 2
+# October 2006
+- https://www.cagematch.net/?id=1&nr=8581 # 1PW First Anniversary Show
+# January 2007
+- https://www.cagematch.net/?id=1&nr=38194 # 1PW Will Not Die
+# October 2007
+- https://www.cagematch.net/?id=1&nr=14078 # 1PW Second Anniversary Show
+# April 2008
+- https://www.cagematch.net/?id=1&nr=20595 # 1PW Know Your Enemy 2008
+# June 2008
+- https://www.cagematch.net/?id=1&nr=22613 # NOAH European Navigation 2008
+# October 2008
+- https://www.cagematch.net/?id=1&nr=29652 # 1PW Third Anniversary Show
+# November 2009
+- https://www.cagematch.net/?id=1&nr=44909 # WWE DX Invasion Tour - Birmingham
+# April 2010
+- taping:
+    name: "WWE Friday Night SmackDown #556 Taping"
+    urls:
+        - https://www.cagematch.net/?id=1&nr=50217 # WWE NXT #1.08
+        - partial:
+            url: https://www.cagematch.net/?id=1&nr=50185 # WWE Superstars #53
+            exclude: [2,3] # only one match
+        - https://www.cagematch.net/?id=1&nr=50226 # WWE Friday Night SmackDown #556
+# April 2012
+- taping:
+    name: "WWE Monday Night RAW #986 Taping"
+    urls:
+        - partial:
+            url: https://www.cagematch.net/?id=1&nr=78189 # WWE Superstars #158
+            exclude: [3] # first 2 matches
+        - https://www.cagematch.net/?id=1&nr=78192 # WWE Monday Night RAW #986
+# April 2013
+- taping:
+    name: "WWE Monday Night RAW #1039 Taping"
+    urls:
+        - https://www.cagematch.net/?id=1&nr=95125 # WWE Superstars #211
+        - https://www.cagematch.net/?id=1&nr=94826 # WWE Monday Night RAW #1039
+- taping:
+    name: "WWE Friday Night SmackDown #714 Taping"
+    urls:
+        - https://www.cagematch.net/?id=1&nr=94858 # WWE Main Event #30
+        - https://www.cagematch.net/?id=1&nr=94859 # WWE Friday Night SmackDown #714
+# June 2013
+- https://www.cagematch.net/?id=1&nr=94731 # RevPro When Thunder Strikes
+# November 2013
+- https://www.cagematch.net/?id=1&nr=102710 # WWE Live Leeds
+# March 2014
+- https://www.cagematch.net/?id=1&nr=104809 # RevPro High Stakes 2014
+# May 2014
+- taping:
+    name: "WWE Friday Night SmackDown #770 Taping"
+    urls:
+        - https://www.cagematch.net/?id=1&nr=111345 # WWE Main Event #86
+        - https://www.cagematch.net/?id=1&nr=111347 # WWE Friday Night SmackDown #770
+# June 2014
+- https://www.cagematch.net/?id=1&nr=108336 # RevPro Summer Sizzler 2014
+- https://www.cagematch.net/?id=1&nr=111317 # PROGRESS World Cup 2014
+# July 2014
+- https://www.cagematch.net/?id=1&nr=111319 # PROGRESS Chapter 14: Thunderbastard
+# August 2014
+- https://www.cagematch.net/?id=1&nr=133600 # TNA British Boot Camp
+# September 2014
+- https://www.cagematch.net/?id=1&nr=114307 # PROGRESS ENDVR:6
+- https://www.cagematch.net/?id=1&nr=114308 # PROGRESS Chapter 15: Just Because You're Paranoid, Doesn't Mean They Aren't Out To Get You
+# October 2014
+- https://www.cagematch.net/?id=1&nr=112653 # RevPro Uprising 2014
+# November 2014
+- https://www.cagematch.net/?id=1&nr=120860 # PROGRESS Chapter 16: Very Very Very Breaky Breaky Breaky Bishi Bishiii
+# January 2015
+- https://www.cagematch.net/?id=1&nr=121426 # PROGRESS ENDVR:8
+- https://www.cagematch.net/?id=1&nr=121427 # PROGRESS Chapter 17: Harder, Better, Faster, Stronger
+# February 2015
+- taping:
+    name: "RevPro TV Taping"
+    urls:
+        - https://www.cagematch.net/?id=1&nr=126979 # RevPro TV #1.01
+        - https://www.cagematch.net/?id=1&nr=126980 # RevPro TV #1.02
+        - https://www.cagematch.net/?id=1&nr=127249 # RevPro TV #1.03
+        - https://www.cagematch.net/?id=1&nr=127389 # RevPro TV #1.04
+# March 2015
+- https://www.cagematch.net/?id=1&nr=123853 # PROGRESS ENDVR:9
+- https://www.cagematch.net/?id=1&nr=121428 # PROGRESS Chapter 18: The Show We Can't Call PROGRESSleMania For Legal Reasons
+# April 2015
+- https://www.cagematch.net/?id=1&nr=121110 # CHIKARA Afternoon Delight
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=127215 # Fight CLub Pro Enter CHIKARA - Part Three
+    exclude: [1,2,3] # Only saw the main event
+    exclude_from_count: True
+- https://www.cagematch.net/?id=1&nr=125782 # PROGRESS ENDVR:10
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=123811 # ICW Insane Entertainment System Tour - Alex Kidd In London
+    exclude: [6,7,8]
+# May 2015
+- taping:
+    name: "RevPro TV Taping"
+    urls:
+        - https://www.cagematch.net/?id=1&nr=129265 # RevPro TV #1.08
+        - https://www.cagematch.net/?id=1&nr=129881 # RevPro TV #1.09
+        - https://www.cagematch.net/?id=1&nr=130380 # RevPro TV #1.10
+        - https://www.cagematch.net/?id=1&nr=127390 # RevPro TV #1.11
+- https://www.cagematch.net/?id=1&nr=125781 # PROGRESS Chapter 19: Super Strong Style 16 Tournament Edition 2015 - Day 2
+# June 2015
+- https://www.cagematch.net/?id=1&nr=130650 # PROGRESS ENDVR:11
+# July 2015
+- https://www.cagematch.net/?id=1&nr=130446 # PROGRESS Chapter 20: Thunderbastard - Beyond Thunderbastard
+# August 2015
+- https://www.cagematch.net/?id=1&nr=135772 # PROGRESS PTNTL:2
+# September 2015
+- https://www.cagematch.net/?id=1&nr=132954 # PROGRESS Chapter 21: You Know We Don't Like To Use The Sit Down Gun
+- https://www.cagematch.net/?id=1&nr=132955 # PROGRESS ENDVR:12
+# October 2015
+- https://www.cagematch.net/?id=1&nr=130983 # RevPro Uprising 2015
+- https://www.cagematch.net/?id=1&nr=132956 # PROGRESS Chapter 22: Trust, Encouragement, Reward, Loyalty, Satisfaction
+# November 2015
+- https://www.cagematch.net/?id=1&nr=132957 # PROGRESS Chapter 23: What A Time To Be Alive!
+# December 2015
+- taping:
+    name: "NXT TakeOver: London"
+    urls:
+        - partial:
+            url: https://www.cagematch.net/?id=1&nr=143401 # NXT #176
+            exclude: [3] # Opening matches taped before
+        - https://www.cagematch.net/?id=1&nr=136346 # NXT TakeOver: London
+        - partial:
+            url: https://www.cagematch.net/?id=1&nr=143401 # NXT #176
+            exclude: [1,2] # Main event taped after
+# January 2016
+- https://www.cagematch.net/?id=1&nr=135775 # PROGRESS ENDVR:14
+- https://www.cagematch.net/?id=1&nr=138932 # RevPro High Stakes 2016
+- https://www.cagematch.net/?id=1&nr=135773 # PROGRESS Chapter 25: Chat Shit Get Banged
+# February 2016
+- https://www.cagematch.net/?id=1&nr=144769 # RevPro Live At The Cockpit #3
+# March 2016
+- https://www.cagematch.net/?id=1&nr=135777 # PROGRESS ENDVR:15
+- https://www.cagematch.net/?id=1&nr=144754 # EVE Let's Make History!
+- https://www.cagematch.net/?id=1&nr=135778 # PROGRESS Chapter 27: The Lost Art Of Suffering
+# April 2016
+- https://www.cagematch.net/?id=1&nr=135780 # PROGRESS Chapter 29: Practically PROGRESS In Every Way
+# May 2016
+- https://www.cagematch.net/?id=1&nr=148421 # RevPro Live At The Cockpit #5
+- https://www.cagematch.net/?id=1&nr=135781 # PROGRESS ENDVR:16
+- https://www.cagematch.net/?id=1&nr=135782 # PROGRESS Chapter 30: Super Strong Style 16 Tournament Edition 2016 - Day 1
+- https://www.cagematch.net/?id=1&nr=135783 # PROGRESS Chapter 30: Super Strong Style 16 Tournament Edition 2016 - Day 2
+# June 2016
+- https://www.cagematch.net/?id=1&nr=149571 # RevPro Angle Vs. Sabre Jr.
+- https://www.cagematch.net/?id=1&nr=135785 # PROGRESS Chapter 32: 5000 To 1
+# July 2016
+- https://www.cagematch.net/?id=1&nr=147150 # RevPro Summer Sizzler 2016
+# August 2016
+- https://www.cagematch.net/?id=1&nr=155826 # PROGRESS ENDVR:17
+- https://www.cagematch.net/?id=1&nr=157501 # RevPro Uprising 2016
+- https://www.cagematch.net/?id=1&nr=135789 # PROGRESS Chapter 35: Writing Nirvana On Other People's Bags
+# September 2016
+- https://www.cagematch.net/?id=1&nr=135791 # PROGRESS Chapter 36: We're Gonna Need A Bigger Room ... Again
+# October 2016
+- https://www.cagematch.net/?id=1&nr=135793 # PROGRESS Chapter 38: When Men Throw Men At Men
+# November 2016
+- https://www.cagematch.net/?id=1&nr=158329 # RevPro/NJPW Global Wars UK 2016 - Day 1
+- https://www.cagematch.net/?id=1&nr=162141 # PROGRESS ENDVR:18
+- https://www.cagematch.net/?id=1&nr=163925 # EVE Never Mind The Bollocks, Here's Pro-Wrestling: EVE
+- https://www.cagematch.net/?id=1&nr=135795 # PROGRESS Chapter 39: The Graps Of Wrath
+# December 2016
+- https://www.cagematch.net/?id=1&nr=155824 # PROGRESS Chapter 41: Unboxing Live!
+# January 2017
+- https://www.cagematch.net/?id=1&nr=162142 # PROGRESS Chapter 42: Life, The Universe & Wrestling
+- https://www.cagematch.net/?id=1&nr=164744 # RevPro High Stakes 2017
+- https://www.cagematch.net/?id=1&nr=162146 # wXw We Love Wrestling Tour 2017: London
+- https://www.cagematch.net/?id=1&nr=107447 # PROGRESS Chapter 43: Tropic Thunderbastard
+# February 2017
+- https://www.cagematch.net/?id=1&nr=165452 # EVE A Day At The Resistance
+- https://www.cagematch.net/?id=1&nr=164989 # EVE A Night At The Resistance
+- https://www.cagematch.net/?id=1&nr=162672 # PROGRESS Chapter 44: Old Man Yells At Cloud
+# March 2017
+- https://www.cagematch.net/?id=1&nr=166808 # XWA 46: Please Don't Die 2
+- https://www.cagematch.net/?id=1&nr=171055 # WCPW Chain Reaction
+- https://www.cagematch.net/?id=1&nr=162674 # PROGRESS Chapter 46: I Like To Chill Out Here And Shoot Some Dinosaurs
+# April 2017
+- https://www.cagematch.net/?id=1&nr=162390 # RevPro Live At The Cockpit 15
+- https://www.cagematch.net/?id=1&nr=172541 # RevPro Epic Encounter 2017
+- https://www.cagematch.net/?id=1&nr=165644 # FCP Dream Tag Team Invitational 2017 - Day 3
+- https://www.cagematch.net/?id=1&nr=162677 # PROGRESS Chapter 47: Complicated Simplicity
+# May 2017
+- https://www.cagematch.net/?id=1&nr=162391 # RevPro Live At The Cockpit 16
+- https://www.cagematch.net/?id=1&nr=175550 # EVE Babes With The Power - Day 2
+- https://www.cagematch.net/?id=1&nr=162684 # PROGRESS Chapter 49: Super Strong Style 16 Tournament Edition 2017 - Day 1
+- https://www.cagematch.net/?id=1&nr=162685 # PROGRESS Chapter 49: Super Strong Style 16 Tournament Edition 2017 - Day 2
+- https://www.cagematch.net/?id=1&nr=162686 # PROGRESS Chapter 49: Super Strong Style 16 Tournament Edition 2017 - Day 3
+# June 2017
+- https://www.cagematch.net/?id=1&nr=162687 # PROGRESS Chapter 50: I Give It Six Months
+# July 2017
+- https://www.cagematch.net/?id=1&nr=170845 # XWA 47: The Exclusive Series
+# August 2017
+- https://www.cagematch.net/?id=1&nr=178909 # FCP Capital Cock Knocker 2
+- https://www.cagematch.net/?id=1&nr=162690 # PROGRESS Chapter 54: Go To Your God Like A Soldier
+# September 2017
+- https://www.cagematch.net/?id=1&nr=181419 # EVE We Do Right - Not Nice
+- https://www.cagematch.net/?id=1&nr=162692 # PROGRESS Chapter 55: Chase The Sun
+# October 2017
+- https://www.cagematch.net/?id=1&nr=183565 # PROGRESS Revelations Of Divine Love
+- https://www.cagematch.net/?id=1&nr=175530 # Lucha Forever Ultimo Battle 2017
+- https://www.cagematch.net/?id=1&nr=183320 # EVE Nasty Women
+- https://www.cagematch.net/?id=1&nr=168559 # wXw Fight Forever Tour 2017: London
+- https://www.cagematch.net/?id=1&nr=162694 # PROGRESS Chapter 56: La Danse Macabre
+# November 2017
+- https://www.cagematch.net/?id=1&nr=183667 # RevPro/NJPW Global Wars 2017 - Day 1
+- https://www.cagematch.net/?id=1&nr=175798 # EVE SHE-1 ~ Ace Of EVE - Day 1: Show #1
+- https://www.cagematch.net/?id=1&nr=175797 # EVE SHE-1 ~ Ace Of EVE - Day 1: Show #2
+- https://www.cagematch.net/?id=1&nr=175800 # EVE SHE-1 ~ Ace Of EVE - Day 2: Show #1
+- https://www.cagematch.net/?id=1&nr=175799 # EVE SHE-1 ~ Ace Of EVE - Day 2: Show #2
+- https://www.cagematch.net/?id=1&nr=162696 # PROGRESS Chapter 58: Live Your Best Life
+# December 2017
+- https://www.cagematch.net/?id=1&nr=183372 # RevPro Uprising 2017
+- https://www.cagematch.net/?id=1&nr=175410 # PROGRESS Chapter 60: Unboxing Live! 2 - Unbox Harder
+# January 2018
+- https://www.cagematch.net/?id=1&nr=184092 # EVE Not Made To Be Subtle
+- https://www.cagematch.net/?id=1&nr=162717 # RevPro High Stakes 2018
+- https://www.cagematch.net/?id=1&nr=184355 # PROGRESS Chapter 62: Fear No More, Come To Dust
+# February 2018
+- https://www.cagematch.net/?id=1&nr=187571 # XWA 51: WrestleFriends: Equal Fights!
+# March 2018
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=184094 # EVE SHEroes!
+    exclude: [4,5,6,7,8] # Had to leave after 3 matches
+    exclude_from_count: True
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=184357 # PROGRESS Chapter 65: Have Some Faith In The Sound
+    exclude: [1] # Missed the dark match
+- https://www.cagematch.net/?id=1&nr=194333 # EVE #SHEVOLUTION
+# April 2018
+- https://www.cagematch.net/?id=1&nr=177261 # FCP Dream Tag Team Invitational 2018 - Day 3
+# May 2018
+- https://www.cagematch.net/?id=1&nr=183999 # PROGRESS Chapter 68: Super Strong Style 16 Tournament Edition 2018 - Day 1
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=186937 # EVE Wrestle Queendom
+    exclude: [2,3,4,5,6] # left after one match
+    exclude_from_count: True
+- https://www.cagematch.net/?id=1&nr=184000 # PROGRESS Chapter 68: Super Strong Style 16 Tournament Edition 2018 - Day 2
+- https://www.cagematch.net/?id=1&nr=184001 # PROGRESS Chapter 68: Super Strong Style 16 Tournament Edition 2018 - Day 3
+- https://www.cagematch.net/?id=1&nr=190880 # RevPro Epic Encounter 2018
+- https://www.cagematch.net/?id=1&nr=184358 # PROGRESS Chapter 70: May 27th 1978
+# June 2018
+- https://www.cagematch.net/?id=1&nr=184098 # EVE Are The Weirdos, Mister
+- https://www.cagematch.net/?id=1&nr=200254 # XWA 53: WrestleFriends Equal Fights! 2: Every Loser Wins
+- https://www.cagematch.net/?id=1&nr=200676 # WWE United Kingdom Championship Tournament 2018 - Day 1
+- https://www.cagematch.net/?id=1&nr=200757 # WWE United Kingdom Championship Tournament 2018 - Day 2
+- https://www.cagematch.net/?id=1&nr=184359 # PROGRESS Chapter 72: Got Got Need
+- https://www.cagematch.net/?id=1&nr=200329 # RevPro Strong Style Evolved UK - Day 1
+# July 2018
+- https://www.cagematch.net/?id=1&nr=184360 # PROGRESS Chapter 74: Mid Week Matters
+- https://www.cagematch.net/?id=1&nr=273807 # Anarchy Pro: Master Of Brutality Tournament Round 3
+# August 2018
+- https://www.cagematch.net/?id=1&nr=184100 # EVE Riot, Grrrls!
+- https://www.cagematch.net/?id=1&nr=200334 # RevPro Summer Sizzler 2018
+- https://www.cagematch.net/?id=1&nr=184361 # PROGRESS Chapter 75: These Violent Delights Have Violent Ends
+- https://www.cagematch.net/?id=1&nr=200546 # Fight Club Pro Project London - Day 3
+# September 2018
+- https://www.cagematch.net/?id=1&nr=202831 # ATTACK! Live At The Dome
+- https://www.cagematch.net/?id=1&nr=202471 # EVE Global Women Strike
+- https://www.cagematch.net/?id=1&nr=207435 # EVE Strong Women Style - Show 1
+- https://www.cagematch.net/?id=1&nr=199673 # EVE Strong Women Style - Show 2
+- https://www.cagematch.net/?id=1&nr=183402 # PROGRESS Chapter 76: Hello Wembley!
+# October 2018
+- https://www.cagematch.net/?id=1&nr=184362 # PROGRESS Chapter 77: Pumpkin Spice PROGRESS
+# November 2018
+- https://www.cagematch.net/?id=1&nr=184364 # EVE SHE-1 ~ Ace Of EVE 2018 - Day 1: Show #1
+- https://www.cagematch.net/?id=1&nr=184104 # EVE SHE-1 ~ Ace Of EVE 2018 - Day 1: Show #2
+- https://www.cagematch.net/?id=1&nr=184366 # EVE SHE-1 ~ Ace Of EVE 2018 - Day 2: Show #1
+- https://www.cagematch.net/?id=1&nr=184365 # EVE SHE-1 ~ Ace Of EVE 2018 - Day 2: Show #2
+- https://www.cagematch.net/?id=1&nr=184363 # PROGRESS Chapter 79: One Big Neck With Sausage Hands
+# December 2018
+- https://www.cagematch.net/?id=1&nr=184105 # EVE Shevivor Series
+- https://www.cagematch.net/?id=1&nr=212727 # ATTACK! Under The Mistletour 2018 - Day 1
+- https://www.cagematch.net/?id=1&nr=243589 # Head Drop Live Pro Wrestling
+# January 2019
+- https://www.cagematch.net/?id=1&nr=220327 # RevPro Live At The Cockpit 37
+- https://www.cagematch.net/?id=1&nr=220538 # RevPro New Year's Resolution
+- https://www.cagematch.net/?id=1&nr=211115 # PROGRESS Chapter 83: Remove Child Before Ironing
+# February 2019
+- https://www.cagematch.net/?id=1&nr=220704 # RevPro High Stakes 2019
+- https://www.cagematch.net/?id=1&nr=211116 # PROGRESS Chapter 84: Eskeewd Beef! Have Anybody Got Any Bokkle Oran Doove?
+- https://www.cagematch.net/?id=1&nr=210994 # EVE Global Women Strike 2
+# March 2019
+- https://www.cagematch.net/?id=1&nr=225032 # Southside ALLIE ALONe: Lost In London
+- https://www.cagematch.net/?id=1&nr=220523 # EVE She Fights On Fridays!
+- https://www.cagematch.net/?id=1&nr=210995 # EVE She Slams On Saturdays!
+- https://www.cagematch.net/?id=1&nr=226471 # IWL Kingdom Come
+- https://www.cagematch.net/?id=1&nr=211117 # PROGRESS Chapter 87: Breadknife
+# April 2019
+- https://www.cagematch.net/?id=1&nr=216689 # Riptide Rumble 2019
+- https://www.cagematch.net/?id=1&nr=224183 # ATTACK! Live At The Dome III
+- squashmatch:
+    url: https://www.cagematch.net/?id=1&nr=225156 # EVE We're All Gonna Die! The Frantic Scramble In Search For Meaning Through A Mess Of Meaty Interactions: AKA The Kris Wolf Retirement Show
+    squash: [6-18]
+# May 2019
+- https://www.cagematch.net/?id=1&nr=211119 # PROGRESS Chapter 88: Super Strong Style 16 Tournament Edition 2019 - Day 2
+- https://www.cagematch.net/?id=1&nr=211120 # PROGRESS Chapter 88: Super Strong Style 16 Tournament Edition 2019 - Day 3
+- https://www.cagematch.net/?id=1&nr=210997 # EVE She Persisted
+- https://www.cagematch.net/?id=1&nr=243591 # Head Drop The Return Of Live Pro Wrestling
+- https://www.cagematch.net/?id=1&nr=211121 # PROGRESS Chapter 89: 26th May 1988
+# June 2019
+- https://www.cagematch.net/?id=1&nr=229696 # Riptide Pride Of Brighton
+- https://www.cagematch.net/?id=1&nr=224186 # ATTACK! Live At The Dome IV
+- https://www.cagematch.net/?id=1&nr=229654 # Frontline 1 Year On The Frontline
+- https://www.cagematch.net/?id=1&nr=230892 # SOUL 4
+- https://www.cagematch.net/?id=1&nr=230946 # Battle Pro Wrestling After Hours
+- https://www.cagematch.net/?id=1&nr=231683 # EVE She's Gonna Start A Fight
+- https://www.cagematch.net/?id=1&nr=233144 # Southside The Day Before Tomorrow
+- https://www.cagematch.net/?id=1&nr=215314 # EVE Wrestle Queendom 2
+# July 2019
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=229677 # IWL Untitled 2
+    exclude: [1,2] # Missed first two matches
+- https://www.cagematch.net/?id=1&nr=226306 # Sendai Girls UK
+- https://www.cagematch.net/?id=1&nr=211123 # PROGRESS Chapter 93: Cheer Up Juice
+# August 2019
+- https://www.cagematch.net/?id=1&nr=211000 # EVE Fights And False Lashes
+- https://www.cagematch.net/?id=1&nr=232931 # ATTACK! (Thank God It's Not) WinterSlam 4
+- https://www.cagematch.net/?id=1&nr=231374 # SOUL 5: Thursday Night SOUL
+- https://www.cagematch.net/?id=1&nr=211124 # PROGRESS Chapter 94: Physician, Heal Thyself
+- https://www.cagematch.net/?id=1&nr=216692 # Riptide Bank Holiday Wrestling - Show 1
+- https://www.cagematch.net/?id=1&nr=216694 # Riptide Bank Holiday Wrestling - Show 2
+- https://www.cagematch.net/?id=1&nr=231884 # NJPW Royal Quest
+# September 2019
+- https://www.cagematch.net/?id=1&nr=231375 # SOUL 6: Living Forever
+- https://www.cagematch.net/?id=1&nr=224936 # PROGRESS Natural Progression Series 6
+- https://www.cagematch.net/?id=1&nr=211001 # EVE Wrestling With An Agenda
+- https://www.cagematch.net/?id=1&nr=224937 # PROGRESS Chapter 95: Still Chasing
+- https://www.cagematch.net/?id=1&nr=236817 # Schadenfreude & Friends Two
+- https://www.cagematch.net/?id=1&nr=238027 # EVE Friday Night Riot
+- https://www.cagematch.net/?id=1&nr=239755 # EVE She Regrets Nothing
+# October 2019
+- https://www.cagematch.net/?id=1&nr=236120 # wXw World Tag Team Festival 2019 - Day 1
+- https://www.cagematch.net/?id=1&nr=236128 # wXw Femmes Fatales 2019
+- https://www.cagematch.net/?id=1&nr=236121 # wXw World Tag Team Festival 2019 - Day 2
+- https://www.cagematch.net/?id=1&nr=236129 # wXw AMBITION Wildcards Edition
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=236122 # wXw World Tag Team Festival 2019 - Day 3
+    exclude: [1,2]
+- https://www.cagematch.net/?id=1&nr=230613 # Breed Pro Starrcave
+- https://www.cagematch.net/?id=1&nr=231376 # SOUL 7: Another Day In Paradise
+- https://www.cagematch.net/?id=1&nr=211125 # PROGRESS Chapter 97: Sex Robots Will Eventually Be Capable Of Murder
+# November 2019
+- https://www.cagematch.net/?id=1&nr=241791 # Schadenfreude & Friends 3: Schadenfreude Royale
+- https://www.cagematch.net/?id=1&nr=241792 # Schadenfreude & Friends 4: Schadenfreude Vice - The Tale Of The Baker Street Blues
+- https://www.cagematch.net/?id=1&nr=211003 # EVE SHE-1 ~ Ace Of EVE 2019 - Day 1: Show #1
+- https://www.cagematch.net/?id=1&nr=211004 # EVE SHE-1 ~ Ace Of EVE 2019 - Day 1: Show #2
+- https://www.cagematch.net/?id=1&nr=211005 # EVE SHE-1 ~ Ace Of EVE 2019 - Day 2: Show #1
+- https://www.cagematch.net/?id=1&nr=211006 # EVE SHE-1 ~ Ace Of EVE 2019 - Day 2: Show #2
+- https://www.cagematch.net/?id=1&nr=243593 # Head Drop Wrestling III
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=241037 # RevPro British J Cup 2019
+    exclude: [1]
+- https://www.cagematch.net/?id=1&nr=250041 # LLL New Dawn Rising
+# December 2019
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=211007 # EVE Let's Get Shitfaced & Scream Into The Void: A Christmas Wrestling Spectacular
+    exclude: [6]
+- https://www.cagematch.net/?id=1&nr=249628 # ATTACK! Under The Mistletour 2019 - Day 1
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=231377 # SOUL 8: Take A Look At Me Now
+    exclude: [1] # Title win by default included as match, didn't happen
+- https://www.cagematch.net/?id=1&nr=211127 # PROGRESS Chapter 100: Unboxing Live IV - A New Hope
+# January 2020
+- https://www.cagematch.net/?id=1&nr=246250 # RevPro New Year's Revolution 2020
+- https://www.cagematch.net/?id=1&nr=233117 # EVE Wrestle Queendom 3
+- https://www.cagematch.net/?id=1&nr=252492 # Schadenfreude & Friends 5
+- https://www.cagematch.net/?id=1&nr=252493 # Schadenfreude & Friends 6
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=254435 # TNT DOA Death Match Tournament 2020
+    exclude: [1] # Pre show VIP match
+# February 2020
+- https://www.cagematch.net/?id=1&nr=251642 # Good Wrestling #20: No Ring
+- https://www.cagematch.net/?id=1&nr=251816 # ATTACK! Awadama Fever
+- https://www.cagematch.net/?id=1&nr=250411 # SOUL 9: 1 Year Anniversary - In The Air Tonight
+- squashmatch:
+    url: https://www.cagematch.net/?id=1&nr=255145 # Schadenfreude & Friends 7: Good Fucking Riddance
+    squash: [5-24]
+- https://www.cagematch.net/?id=1&nr=233573 # SOUL x Knucklelocks: Trashin' The Camp
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=244836 # PROGRESS Chapter 103: Beer Snake City
+    exclude: [8] # Had to leave early
+# March 2020
+- https://www.cagematch.net/?id=1&nr=242130 # Riptide Pride Of Brighton Round 1
+- https://www.cagematch.net/?id=1&nr=253919 # Riptide The Storm 2020
+# March 2022
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=334880 # PROGRESS Chapter 131: 10th Anniversary Show
+    exclude: [1,2] # Missed first two matches
+# April 2022
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=341522 # EVE Global Women Strike 3
+    exclude: [7] # Had to leave as it was 11pm and eve was always like that
+# June 2022
+- https://www.cagematch.net/?id=1&nr=338022 # EVE SHE-1 2022 - Day 1 Show 1
+- https://www.cagematch.net/?id=1&nr=338021 # EVE SHE-1 2022 - Day 1 Show 2
+- https://www.cagematch.net/?id=1&nr=338020 # EVE SHE-1 2022 - Day 2 Show 1
+- https://www.cagematch.net/?id=1&nr=338019 # EVE SHE-1 2022 - Day 2 Show 2
+# September 2022
+- https://www.cagematch.net/?id=1&nr=350772 # EVE Thursday Night Riot
+- https://www.cagematch.net/?id=1&nr=347788 # PROGRESS Return Of The Fly
+# October 2022
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=349558 # NJPW Royal Quest II - Day 1
+    exclude: [1,2] # Missed first two matches
+- https://www.cagematch.net/?id=1&nr=349559 # NJPW Royal Quest II - Day 2
+# November 2022
+- https://www.cagematch.net/?id=1&nr=346559 # EVE Wrestle Queendom 5 - Show 1
+- https://www.cagematch.net/?id=1&nr=350773 # EVE Wrestle Queendom 5 - Show 2
+# March 2023
+- https://www.cagematch.net/?id=1&nr=359993 # PROGRESS Gene Munny's Daft Lad Emporium
+# July 2023
+- https://www.cagematch.net/?id=1&nr=368755 # EVE Riot At The Yard Theatre
+# August 2023
+- https://www.cagematch.net/?id=1&nr=368753 # Gatoh Move ChocoPro UK
+- taping:
+    name: "AEW All In London"
+    urls:
+        - https://www.cagematch.net/?id=1&nr=373030 # AEW All In London 2023 - Zero Hour
+        - partial:
+            url: https://www.cagematch.net/?id=1&nr=364426 # AEW All In London 2023
+            exclude: [7]
+# October 2023
+- https://www.cagematch.net/?id=1&nr=377357 # EVE 112: SHE-1 '92 SPECIAL - Opening Round
+- https://www.cagematch.net/?id=1&nr=377356 # EVE 113: SHE-1 '92 SPECIAL - The Final Rounds
+# November 2023
+- https://www.cagematch.net/?id=1&nr=377639 # EVE 114: Friday Night's Alright For Fightin
+# March 2024
+- https://www.cagematch.net/?id=1&nr=380411 # EVE 119: Beers, Brawls And Bad-Ass Bitches #IWD2024
+- https://www.cagematch.net/?id=1&nr=380410 # EVE 120: Women Behaving Badly #IWD2024
+# May 2024
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=389586 # RevPro/CMLL Fantastica Mania UK 2024 - Show 1
+    exclude: [1] # Missed first match
+- https://www.cagematch.net/?id=1&nr=389585 # RevPro/CMLL Fantastica Mania UK 2024 - Show 2
+# June 2024
+- https://www.cagematch.net/?id=1&nr=388734 # EVE 123: Once More, With Feeling
+# August 2024
+- https://www.cagematch.net/?id=1&nr=411514 # Pro Wrestling CEASEFIRE Ceasefire NOW!
+- https://www.cagematch.net/?id=1&nr=398697 # Riot Cabaret ALL sINging All Dancing 2024
+- https://www.cagematch.net/?id=1&nr=399239 # ATTACK! ALL CAPS ALL DAY
+- https://www.cagematch.net/?id=1&nr=399818 # EVE x TJPW
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=390465 # RevPro 12 Year Anniversary Show
+    exclude: [7] # Gabe Kidd piss break
+- taping:
+    name: "AEW All In London 2024"
+    urls:
+        - https://www.cagematch.net/?id=1&nr=401410 # AEW All In London 2024 - Zero Hour
+        - https://www.cagematch.net/?id=1&nr=374482 # AEW All In London 2024
+# October 2024
+- https://www.cagematch.net/?id=1&nr=405545 # Sukeban London
+- https://www.cagematch.net/?id=1&nr=402137 # NJPW Royal Quest IV
+# November 2024
+- https://www.cagematch.net/?id=1&nr=410595 # EVE 128: Halloween Forever
+- https://www.cagematch.net/?id=1&nr=411515 # Pro Wrestling CEASEFIRE Justice Will Shine On!
+# December 2024
+- https://www.cagematch.net/?id=1&nr=414832 # Riot Cabaret Jingle Bell Brawl 2024
+# January 2025
+- https://www.cagematch.net/?id=1&nr=411045 # GCW Live In London
+# February 2025
+- https://www.cagematch.net/?id=1&nr=416976 # EVE 131: Multiverse Rumble
+- https://www.cagematch.net/?id=1&nr=421002 # ICHIBAN Wrestling Final Sting: The Last Of Satomura
+# April 2025
+- https://www.cagematch.net/?id=1&nr=415856 # RevPro High Stakes 2025
