@@ -44,7 +44,7 @@ Options:
 
 ## YAML Spec
 
-The list of attended shows is sourced from a [YAML](https://yaml.org/) file. My personal copy is at [`py/shows.yaml`](py/shows.yaml).
+The list of attended shows is sourced from a [YAML](https://yaml.org/) file. My personal copy is at [`shows.yaml`](shows.yaml).
 
 ### The List
 
