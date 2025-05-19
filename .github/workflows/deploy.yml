@@ -30,12 +30,15 @@ jobs:
         with:
             working-directory: py
             enable-cache: true
-      - working-directory: py
-        run: uv run main.py shows.yaml out
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: npm
+            node-version: 22
+            cache: npm
+      - uses: opt-nc/setup-duckdb-action@v1.0.11
+        with:
+            version: v1.2.2
+      - working-directory: py
+        run: uv run main.py shows.yaml out
       - run: npm ci
       - run: npm run build
       - uses: actions/configure-pages@v4
