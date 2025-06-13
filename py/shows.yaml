@@ -1,5 +1,7 @@
 # January 2006
-- https://www.cagematch.net/?id=1&nr=5157 # 1PW No Turning Back - Day 2
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=5157 # 1PW No Turning Back - Day 2
+    exclude: [1,2,3,4] # Pre show VIP matches
 # May 2006
 - https://www.cagematch.net/?id=1&nr=6544 # 1PW Know Your Enemy - Day 2
 # October 2006
