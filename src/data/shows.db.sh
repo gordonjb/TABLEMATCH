@@ -17,7 +17,12 @@ FROM read_json('py/out/*.json',
         teams STRUCT(id BIGINT, "text" VARCHAR)[], 
         appearances STRUCT(id BIGINT, "text" VARCHAR)[])[]', 
     partial: 'BOOLEAN', 
-    exclude: 'BOOLEAN'});
+    exclude: 'BOOLEAN'
+  }
+);
+CREATE OR REPLACE MACRO list_order_by_count(l) AS (
+  array(SELECT n, FROM (SELECT unnest(l) AS n) GROUP BY n ORDER BY count(n) DESC)
+);
 EOF
 
 cat showstmp.db >&1  # Write output to stdout
