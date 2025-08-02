@@ -49,8 +49,9 @@ import {bigNumber} from "./components/bigNumber.js";
           },
         sort: "count", reverse: true,
         select: false,
-        format: {names: (x) => Array.from(x).join(" / ")},
-        rows: 21
+        format: {names: (value, i, data) => htl.html`<a href="/wrestlers/${data[i].id}">${Array.from(value).join(" / ")}</a>`},
+        rows: 21,
+        height: 505
       }
     ))}
   </div>
@@ -68,11 +69,19 @@ const tableSearchValue = view(tableSearch);
 ```
 
 ```sql id=allWrestlers
-    SELECT id, count(id) as count, list_distinct(array_agg(text)) as names from (SELECT unnest(wrestlers, recursive := true) from (SELECT unnest(matches, recursive := true) FROM shows.shows)) GROUP BY id ORDER BY count DESC;
-```
-
-```sql id=allShows
-    SELECT * FROM shows.shows ORDER BY date;
+    FROM (
+      FROM (
+        FROM (
+          FROM shows.shows
+          SELECT matches, promotion
+          ORDER BY date
+        )
+        SELECT unnest(matches, recursive := true), promotion.id AS promotionid
+      )
+      SELECT unnest(wrestlers, recursive := true), promotionid
+    )
+    SELECT id, count(id) AS count, count(DISTINCT promotionid) AS pcount, shows.list_order_by_count(array_agg(text)) as names
+    GROUP BY id ORDER BY count DESC;
 ```
 
 ```sql id=includedShows
