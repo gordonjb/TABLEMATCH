@@ -71,7 +71,7 @@ function RenderLinks(ids) {
 function RenderShows(shows) {
   return html.fragment\`\${shows.map((s) => html.fragment\`
   <div class="show">
-    <div><a href="/shows/\${s.id}">\${s.name}</a></div> <div class="muted">\${d3.utcFormat("%B %d, %Y")(new Date(s.date))} - \${s.arena} - \${s.promotion.name}</div>
+    <div><a href="../shows/\${s.id}">\${s.name}</a></div> <div class="muted">\${d3.utcFormat("%B %d, %Y")(new Date(s.date))} - \${s.arena} - \${s.promotion.name}</div>
     <div class="grid grid-cols-1" style="grid-auto-rows: auto;">
       \${RenderMatches(Array.from(s.matches))}
     </div>

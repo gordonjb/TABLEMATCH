@@ -49,7 +49,7 @@ import {bigNumber} from "./components/bigNumber.js";
           },
         sort: "count", reverse: true,
         select: false,
-        format: {names: (value, i, data) => htl.html`<a href="/wrestlers/${data[i].id}">${Array.from(value).join(" / ")}</a>`},
+        format: {names: (value, i, data) => htl.html`<a href="./wrestlers/${data[i].id}">${Array.from(value).join(" / ")}</a>`},
         rows: 21,
         height: 505
       }
