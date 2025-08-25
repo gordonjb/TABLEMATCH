@@ -8,13 +8,11 @@ const {
 
 process.stdout.write(`---
 theme: dashboard
-sql:
-  shows: ../data/shows.db
 ---
 
-~~~sql id=[showData]
-SET VARIABLE s_id = ${id};
-SELECT * FROM shows.shows WHERE list_has_all(id, CAST (getvariable('s_id') AS VARCHAR[])) LIMIT 1;
+~~~js display
+// Load data
+const showData = (await FileAttachment("show-${id}/showtable.parquet").parquet()).get(0);
 ~~~
 
 ~~~js
