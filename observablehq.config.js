@@ -1,7 +1,8 @@
 // See https://observablehq.com/framework/config for documentation.
 
 // Create DB to evaluate page loaders
-import { DuckDBInstance } from '@duckdb/node-api';const duckdb_instance = await DuckDBInstance.create()
+import { DuckDBInstance } from '@duckdb/node-api';
+const duckdb_instance = await DuckDBInstance.create()
 const db = await duckdb_instance.connect()
 await db.run(`CREATE TABLE shows AS 
 SELECT * 
