@@ -1,12 +1,22 @@
 ---
 theme: dashboard
-sql:
-  shows: data/shows.db
 ---
 
 ```js
+// Imports
 import {DonutChart} from "./components/donutChart.js";
 import {bigNumber} from "./components/bigNumber.js";
+
+//Load files async
+const allWrestlers = FileAttachment("data/index/wrestlertable.parquet").parquet();
+const allPromotions = FileAttachment("data/index/promotionstable.parquet").parquet();
+const allMatches = FileAttachment("data/index/matchtable.parquet").parquet();
+const stats = FileAttachment("data/index/statstable.parquet").parquet();
+```
+
+```js
+//Destructure stats
+const [{included: includedShows, excluded: excludedShows}] = stats
 ```
 
 <h1>TABLEMATCH</h1>
@@ -22,7 +32,7 @@ import {bigNumber} from "./components/bigNumber.js";
 
   </div>
   <div class="card">
-    ${resize((width) => bigNumber("Shows seen", includedShows.numRows, "+" + excludedShows.numRows + " partial shows excluded from count", width))}
+    ${resize((width) => bigNumber("Shows seen", includedShows, "+" + excludedShows + " partial shows excluded from count", width))}
 
   </div>
   <div class="card">
@@ -57,7 +67,7 @@ import {bigNumber} from "./components/bigNumber.js";
   </div>
 
   <div class="card">
-    ${resize((width, height) => DonutChart(allPromotions.toArray(), {centerText: "Promotions", width, height}))}
+    ${resize((width, height) => DonutChart([...allPromotions], {centerText: "Promotions", width, height}))}
   </div>
 </div>
 
@@ -66,38 +76,6 @@ import {bigNumber} from "./components/bigNumber.js";
 const tableSearch = Inputs.search(allWrestlers, {format: (x) => ""});
 
 const tableSearchValue = view(tableSearch);
-```
-
-```sql id=allWrestlers
-    FROM (
-      FROM (
-        FROM (
-          FROM shows.shows
-          SELECT matches, promotion
-          ORDER BY date
-        )
-        SELECT unnest(matches, recursive := true), promotion.id AS promotionid
-      )
-      SELECT unnest(wrestlers, recursive := true), promotionid
-    )
-    SELECT id, count(id) AS count, count(DISTINCT promotionid) AS pcount, shows.list_order_by_count(array_agg(text)) as names
-    GROUP BY id ORDER BY count DESC;
-```
-
-```sql id=includedShows
-    SELECT * FROM shows.shows WHERE exclude == false ORDER BY date;
-```
-
-```sql id=excludedShows
-    SELECT * FROM shows.shows WHERE exclude == true ORDER BY date;
-```
-
-```sql id=allPromotions
-    SELECT promotion.id as id, list_distinct(array_agg(promotion."name")) as names, count() as count FROM shows.shows GROUP BY ALL ORDER BY count DESC;
-```
-
-```sql id=allMatches
-    SELECT unnest(matches, recursive := true) FROM (SELECT * FROM shows.shows ORDER BY date);
 ```
 
 <style>
