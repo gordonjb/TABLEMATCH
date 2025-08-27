@@ -8,61 +8,30 @@ const {
 
 process.stdout.write(`---
 theme: dashboard
-sql:
-  shows: ../data/shows.db
 ---
 
-~~~sql id=[...showData]
-SET VARIABLE w_id = ${id};
-SELECT * REPLACE (list_filter(matches, m -> len(list_filter(m.wrestlers, w -> w.id = getvariable('w_id'))) > 0) as matches) FROM shows.shows WHERE len(list_filter(matches, m -> len(list_filter(m.wrestlers, w -> w.id = getvariable('w_id'))) > 0)) > 0 ORDER BY date;
-~~~
-
-~~~sql id="[{count: metaCount, names: metaNames, pcount: metaPromCount}]"
-    SET VARIABLE w_id = ${id};
-    FROM (
-      FROM (
-        FROM (
-          FROM shows.shows
-          SELECT matches, promotion
-          ORDER BY date
-        )
-        SELECT unnest(matches, recursive := true), promotion.id AS promotionid
-      )
-      SELECT unnest(wrestlers, recursive := true), promotionid
-    )
-    SELECT id, count(id) AS count, count(DISTINCT promotionid) AS pcount, shows.list_order_by_count(array_agg(text)) as names
-    WHERE id = getvariable ('w_id')
-    GROUP BY id ORDER BY count DESC;
-~~~
-
 ~~~js
-// HTML Doc
-display(html\`
-<h1>\${Array.from(metaNames).join(" / ")}</h1>
-<h2 class="muted">\${metaCount} matches - \${showData.length} shows - \${metaPromCount} promotions</h2>
-<h4>Profile Link:\${RenderLinks(Array.of(${id}))}</h4>
-<div class="muted">First seen \${d3.utcFormat("%B %d, %Y")(new Date(showData.at(0).date))} - Last seen \${d3.utcFormat("%B %d, %Y")(new Date(showData.at(-1).date))}</div>
-<hr>
-\${RenderShows(showData)}
-\`)
-~~~
+//Load files async
+const appearances = FileAttachment("../data/wrestler-${id}/appearancestable.parquet").parquet();
+const stats = FileAttachment("../data/wrestler-${id}/statstable.parquet").parquet();
 
-~~~js
 // Images
-const cmlink = await FileAttachment("../img/cmlink.webp").image(
+const cmlink = FileAttachment("../img/cmlink.webp").image(
   {
     style: "display:inline-block; height:1em; width:auto; transform:translate(0, 0.1em)",
     alt: "Cagematch Logo"
   }
 );
 
-const wonlogo = await FileAttachment("../img/won.png").image(
+const wonlogo = FileAttachment("../img/won.png").image(
   {
     style: "display:inline-block; height:1em; width:auto; transform:translate(0, 0.1em)",
     alt: "Wrestling Observer Logo"
   }
 );
+~~~
 
+~~~js
 // Functions
 function RenderLinks(ids) {
   return html.fragment\`\${ids.map((i) => html.fragment\` <a href="https://www.cagematch.net/?id=2&nr=\${i}">\${cmlink.cloneNode()}</a>\`)}\`
@@ -95,5 +64,18 @@ function RenderRatings(won, cm) {
   \${cm != null ? html.fragment\`\${cmlink.cloneNode()} - \${cm}\` : ""}
   \`
 }
+
+//Destructure stats
+const [{count: metaCount, names: metaNames, pcount: metaPromCount}] = stats;
+
+// HTML Doc
+display(html\`
+<h1>\${Array.from(metaNames).join(" / ")}</h1>
+<h2 class="muted">\${metaCount} matches - \${appearances.numRows} shows - \${metaPromCount} promotions</h2>
+<h4>Profile Link:\${RenderLinks(Array.of(${id}))}</h4>
+<div class="muted">First seen \${d3.utcFormat("%B %d, %Y")(new Date(appearances.at(0).date))} - Last seen \${d3.utcFormat("%B %d, %Y")(new Date(appearances.at(-1).date))}</div>
+<hr>
+\${RenderShows([...appearances])}
+\`)
 ~~~
 `);

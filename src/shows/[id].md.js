@@ -8,43 +8,29 @@ const {
 
 process.stdout.write(`---
 theme: dashboard
-sql:
-  shows: ../data/shows.db
 ---
 
-~~~sql id=[showData]
-SET VARIABLE s_id = ${id};
-SELECT * FROM shows.shows WHERE list_has_all(id, CAST (getvariable('s_id') AS VARCHAR[])) LIMIT 1;
-~~~
-
 ~~~js
-// HTML Doc
-display(html\`
-<h1>\${showData.name}</h1>
-<h2 class="muted">\${d3.utcFormat("%B %d, %Y")(new Date(showData.date))} - \${showData.arena} - \${showData.promotion.name}</h2>
-<h4>Card Link:\${RenderLinks(Array.from(showData.id))}</h4>
-<div class="grid grid-cols-1" style="grid-auto-rows: auto;">
-  \${RenderMatches(Array.from(showData.matches))}
-</div>
-\`)
-~~~
+//Load files async
+const shows = FileAttachment("../data/show-${id}/showtable.parquet").parquet();
 
-~~~js
 // Images
-const cmlink = await FileAttachment("../img/cmlink.webp").image(
+const cmlink = FileAttachment("../img/cmlink.webp").image(
   {
     style: "display:inline-block; height:1em; width:auto; transform:translate(0, 0.1em)",
     alt: "Cagematch Logo"
   }
 );
 
-const wonlogo = await FileAttachment("../img/won.png").image(
+const wonlogo = FileAttachment("../img/won.png").image(
   {
     style: "display:inline-block; height:1em; width:auto; transform:translate(0, 0.1em)",
     alt: "Wrestling Observer Logo"
   }
 );
+~~~
 
+~~~js
 // Functions
 function RenderLinks(ids) {
   return html.fragment\`\${ids.map((i) => html.fragment\` <a href="https://www.cagematch.net/?id=1&nr=\${i}">\${cmlink.cloneNode()}</a>\`)}\`
@@ -66,5 +52,18 @@ function RenderRatings(won, cm) {
   \${cm != null ? html.fragment\`\${cmlink.cloneNode()}: \${cm}\` : ""}
   \`
 }
+
+//Destructure shows
+const [{id: showid, name: name, date: date, arena: arena, promotion: promotion, matches: matches}] = shows;
+
+// HTML Doc
+display(html\`
+<h1>\${name}</h1>
+<h2 class="muted">\${d3.utcFormat("%B %d, %Y")(new Date(date))} - \${arena} - \${promotion.name}</h2>
+<h4>Card Link:\${RenderLinks(Array.from(showid))}</h4>
+<div class="grid grid-cols-1" style="grid-auto-rows: auto;">
+  \${RenderMatches(Array.from(matches))}
+</div>
+\`)
 ~~~
 `);

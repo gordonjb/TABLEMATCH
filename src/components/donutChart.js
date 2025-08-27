@@ -14,7 +14,7 @@ export function DonutChart(data, {centerText, width, height}) {
     .pie()
     .padAngle(2 / radius)
     .sort(null)
-    .value((d) => d.count);
+    .value((d) => Number(d.count));
 
   const color = d3.scaleOrdinal()
           .domain(data.map(d => Array.from(d.names).join(" / ")))
