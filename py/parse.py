@@ -43,7 +43,6 @@ class CagematchURLFields(StrEnum):
     
     This looks wrong but *is* the correct way round
     """
-
     TYPE = "id"
     ID = "nr"
     NAME = "name"
@@ -66,6 +65,7 @@ def parse_show(show) -> Show:
     :param show: a single entry from the input file, either a URL or a dictionary
     :return: a Show object
     """
+    logger.debug("Parsing entry: %s", show)
     match show:
         case str() as url:
             return handle_show_url(url)
@@ -84,6 +84,7 @@ def parse_show(show) -> Show:
         }:
             taping = handle_taping(taping)
             taping.name = name
+            logger.debug("Taping name set to %s", name)
             return taping
         case {ShowType.TAPING: (list(taping) | {"urls": list(taping)})}:
             return handle_taping(taping)
@@ -96,6 +97,7 @@ def parse_show(show) -> Show:
         }:
             partial = handle_partial(url, excluded_matches)
             partial.exclude = bool(exclude)
+            logger.debug("%s will be excluded from counts", partial.name)
             return partial
         case {
             ShowType.PARTIAL: {
@@ -132,6 +134,7 @@ def handle_taping(taping: list) -> Show:
     :return: a Show object
     """
     taping_parts: list[Show] = list()
+    logger.debug("Starting taping")
     for part in taping:
         taping_parts.append(parse_show(part))
     ret = taping_parts[0]
@@ -139,6 +142,7 @@ def handle_taping(taping: list) -> Show:
     for part in taping_parts[1:]:
         ret.id.extend(part.id)
         ret.matches.extend(part.matches)
+    logger.debug("Taping %s complete", ret.name)
     return ret
 
 
@@ -154,7 +158,9 @@ def handle_partial(url, excluded_matches: list) -> Show:
     """
     partial = parse_show(url)
     # Blank out any matches that are to be excluded
+    logger.debug("Removing matches from partial show %s", partial.name)
     for x in excluded_matches:
+        logger.debug("Removed match %s", partial.matches[x-1])
         partial.matches[x-1] = None
     # Remove the matches that were blanked out from the list
     partial.matches = [x for x in partial.matches if x is not None]
@@ -208,6 +214,7 @@ def handle_squash_match(url, squash_matches: list) -> Show:
             appearances=list(appearances.values()),
         )
         sh.matches[start-1] = m
+        logger.debug("Combined matches %s into match %s", sm, m)
     
     # Remove the matches that were blanked out from the list
     sh.matches = [x for x in sh.matches if x is not None]
@@ -231,7 +238,7 @@ def html_to_show(soup: BeautifulSoup, url: str) -> Show:
     date_str = show_dict[CagematchShowInfoKeys.DATE].get_text()
     dd, mm, yy = date_str.split(".")
     matches = html_to_matches(soup)
-    return Show(
+    ret = Show(
         id=[show_id],
         name=show_name,
         promotion=promotion,
@@ -239,6 +246,8 @@ def html_to_show(soup: BeautifulSoup, url: str) -> Show:
         date="-".join([yy,mm,dd]),
         matches=matches,
     )
+    logger.debug("Parsed %s to show %s", url, ret)
+    return ret
 
 
 def get_show_info(soup: BeautifulSoup) -> dict:
@@ -289,6 +298,10 @@ def html_to_matches(soup: BeautifulSoup) -> list:
     """
     # TODO: Could this be neater?
     matches = soup.find_all("div", {"class": "Match"})
+
+    if logger.isEnabledFor(logging.INFO):
+        all_workers = html_to_all_workers(soup)
+    
     ret = []
     for m in matches:
         scores = m.find("div", {"class": "MatchRecommendedLine"})
@@ -303,6 +316,8 @@ def html_to_matches(soup: BeautifulSoup) -> list:
         teams = []
         appearances = []  # https://regex101.com/r/LtwojY/1
         # TODO: Handle wresters without profiles
+        # Get "All workers"
+        
         with_blocks = []
         if "w/" in str(result):
             with_blocks = re.findall(r"\(w\/([^\)]+)", str(result))
@@ -320,6 +335,10 @@ def html_to_matches(soup: BeautifulSoup) -> list:
                 wrestlers.append(w)
             elif link_type in [ContentType.STABLE, ContentType.TAG_TEAM]:
                 teams.append(w)
+            
+            # If we're doing info logs, check all workers
+            if logger.isEnabledFor(logging.INFO) and w in all_workers:
+                all_workers.remove(w)
 
         ret.append(
             Match(
@@ -332,6 +351,36 @@ def html_to_matches(soup: BeautifulSoup) -> list:
                 appearances=appearances,
             )
         )
+
+    if logger.isEnabledFor(logging.INFO) and all_workers:
+        logger.info("The following items from the \"All workers\" list " \
+                    "were not included in the parsed entries: %s", all_workers)
+    return ret
+
+
+def html_to_all_workers(soup) -> list:
+    """
+    From the souped HTML, find the `Comments Font9` div, and extract the entries to a list of
+    Wrestler objects or strings.
+
+    :param soup: the HTML as passed through BeautifulSoup
+    :return: List of every entry in the all workers section, either as a Wrestler object if a profile
+             is linked, otherwise a str.
+    """
+    all_workers = soup.find("div", {"class": "Comments Font9"})
+    worker_list = (u''.join(str(item) for item in all_workers)).split(",")
+    ret = []
+    for worker in worker_list:
+        worker_soup = BeautifulSoup(worker, 'html.parser')
+        p = worker_soup.find('a')
+        if p is not None:
+            query_parts = dict(parse_qsl(urlparse(p.attrs["href"]).query))
+            ret.append(Wrestler(
+                id=query_parts.get(CagematchURLFields.ID),
+                text=p.text.strip(),
+            ))
+        else:
+            ret.append(worker.strip())
 
     return ret
 
