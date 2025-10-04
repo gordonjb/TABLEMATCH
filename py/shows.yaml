@@ -485,3 +485,7 @@
         - https://www.cagematch.net/?id=1&nr=402945 # AEW/NJPW Forbidden Door 2025
 # September 2025
 - https://www.cagematch.net/?id=1&nr=431921 # EVE 139: Strong Women Style
+# October 2025
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=431922 # EVE 140: Global Women Strike IV
+    exclude: [1,2] # Trains
