@@ -489,3 +489,5 @@
 - partial:
     url: https://www.cagematch.net/?id=1&nr=431922 # EVE 140: Global Women Strike IV
     exclude: [1,2] # Trains
+# November 2025
+- https://www.cagematch.net/?id=1&nr=431923 # EVE 141: Elite Encounters
