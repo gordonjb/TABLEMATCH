@@ -5,15 +5,12 @@ from urllib.parse import parse_qsl, urlparse
 
 from models.match import Match
 from models.wrestler import Wrestler
-import reqs
+import play
 from bs4 import BeautifulSoup
 from models.promotion import Promotion
 from models.show import Show
 
 logger = logging.getLogger(__name__)
-
-session = reqs.get_session()
-
 
 class ContentType(IntEnum):
     """
@@ -119,9 +116,7 @@ def handle_show_url(url: str) -> Show:
     :param url: Should be a str URL for a Cagematch show page
     :return: a Show object
     """
-    raw_html = reqs.get_text(session, url)
-    if raw_html is None:
-        raise ValueError("No HTML returned: " + url)
+    raw_html = play.get_text(url)
     soup = BeautifulSoup(raw_html, "html.parser")
     return html_to_show(soup, url)
 

@@ -7,6 +7,8 @@ requires-python = ">=3.13"
 dependencies = [
     "beautifulsoup4>=4.12.3",
     "click>=8.1.8",
+    "diskcache>=5.6.3",
+    "playwright>=1.62.0",
     "pyyaml>=6.0.2",
     "requests>=2.32.3",
     "requests-cache>=1.2.1",
@@ -14,5 +16,6 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "diskcache-stubs>=5.6.3.6.20240818",
     "ruff>=0.11.1",
 ]

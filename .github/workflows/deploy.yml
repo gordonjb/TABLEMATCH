@@ -3,8 +3,8 @@ name: Deploy
 on:
   # Run this workflow whenever a new commit is pushed to main.
   push: {branches: [main]}
-  # Run this workflow every Monday, at 10:15 UTC (to avoid losing web cache)
-  schedule: [{cron: "15 10 * * 1"}]
+  # Run this workflow every 5 days, at 10:15 UTC (to avoid losing web cache)
+  schedule: [{cron: "15 10 */5 * *"}]
   # Run this workflow when triggered manually in GitHub’s UI.
   workflow_dispatch: {}
 
@@ -24,7 +24,9 @@ jobs:
         env:
             cache-name: cache-cagematch
         with:
-            path: ./py/cagematch_cache.sqlite
+            path: |
+                ./py/cagematch_cache.sqlite
+                ./py/cagematchcache
             key: ${{ runner.os }}-cmcache
       - uses: astral-sh/setup-uv@v7
         with:
@@ -37,10 +39,16 @@ jobs:
       - uses: opt-nc/setup-duckdb-action@v1.2.9
         with:
             version: v1.2.2
-      - working-directory: py
+      - name: Install playwright
+        working-directory: py
+        run: uv run playwright install --with-deps
+      - name: Parse URLs to JSON
+        working-directory: py
         run: uv run main.py shows.yaml out
-      - run: npm ci
-      - run: npm run build
+      - name: Install Observable dependencies
+        run: npm ci
+      - name: Build Observable static site
+        run: npm run build
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
