@@ -6,6 +6,7 @@ yarn-error.log
 .ruff_cache/
 *.sqlite
 py/out/
+py/cagematchcache/
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false
 *.orig
@@ -161,3 +162,4 @@ cython_debug/
 
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Git,Python,uv
+TODO.md
