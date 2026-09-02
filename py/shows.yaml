@@ -502,3 +502,18 @@
 - https://www.cagematch.net/?id=1&nr=454752 # ICHIBAN CRUSADE 01
 # August 2026
 - https://www.cagematch.net/?id=1&nr=452207 # EVE 152: Friday Night Riot
+- https://www.cagematch.net/?id=1&nr=461534 # Pro Wrestling CEASEFIRE Almost In
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=454249 # EVE 153: EVE x The World 2
+    exclude: [2] # Duplicate match
+- partial:
+    url: https://www.cagematch.net/?id=1&nr=453936 # Mystery Wrestling #28
+    exclude: [2,4] # The results around the 24/7 title stuff is weird, need to figure out a workround
+- https://www.cagematch.net/?id=1&nr=434230 # RevPro 14 Year Anniversary Show
+- taping:
+    name: "AEW All In London 2026"
+    urls:
+        - partial:
+            url: https://www.cagematch.net/?id=1&nr=461502 # AEW All In London 2026 - The Buy In
+            exclude: [1,5] # Missed first match in queue, remove 5th match as it's duplicated on main show
+        - https://www.cagematch.net/?id=1&nr=430260 # AEW All In London 2026
