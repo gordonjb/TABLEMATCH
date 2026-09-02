@@ -3,12 +3,13 @@ import re
 from enum import IntEnum, StrEnum
 from urllib.parse import parse_qsl, urlparse
 
-from models.match import Match
-from models.wrestler import Wrestler
-import play
 from bs4 import BeautifulSoup
+
+import play
+from models.match import Match
 from models.promotion import Promotion
 from models.show import Show
+from models.wrestler import Wrestler
 
 logger = logging.getLogger(__name__)
 
@@ -36,8 +37,8 @@ class ShowType(StrEnum):
 
 class CagematchURLFields(StrEnum):
     """
-    Enum of keys in Cagematch URLs. 
-    
+    Enum of keys in Cagematch URLs.
+
     This looks wrong but *is* the correct way round
     """
     TYPE = "id"
@@ -146,8 +147,8 @@ def handle_partial(url, excluded_matches: list) -> Show:
     For a partial show, call parse on the show, then remove the specified matches from the match list.
 
     :param url: a show to be passed to parse_show, could be str or dict
-    :param excluded_matches: a list of matches that should be removed from the match array. 
-                             Note that indexing starts at 1 (i.e. `1` is match one and will be 
+    :param excluded_matches: a list of matches that should be removed from the match array.
+                             Note that indexing starts at 1 (i.e. `1` is match one and will be
                              interpreted as array index 0)
     :return: a Show object
     """
@@ -168,10 +169,10 @@ def handle_squash_match(url, squash_matches: list) -> Show:
     Take ranges of matches, and combine them into single matches.
 
     :param url: a show to be passed to parse_show, could be str or dict
-    :param squash_matches: a list of ranges from the match array, formatted `x-y`, that should be combined. 
+    :param squash_matches: a list of ranges from the match array, formatted `x-y`, that should be combined.
                            Multiple ranges can be provided in a list. No checking is done that these ranges
                            are valid or make sense.
-                           Note that indexing starts at 1 (i.e. `1` is match one and will be 
+                           Note that indexing starts at 1 (i.e. `1` is match one and will be
                            interpreted as array index 0)
     :return: a Show object
     """
@@ -195,7 +196,7 @@ def handle_squash_match(url, squash_matches: list) -> Show:
                 teams.update({t.id: t})
             for a in sl.appearances:
                 appearances.update({a.id: a})
-            # Now blank out the match we just processed from the original list    
+            # Now blank out the match we just processed from the original list
             sh.matches[start-1+idx] = None
 
         # Combine to a new match object, and put it in the index of the start of the range
@@ -210,7 +211,7 @@ def handle_squash_match(url, squash_matches: list) -> Show:
         )
         sh.matches[start-1] = m
         logger.debug("Combined matches %s into match %s", sm, m)
-    
+
     # Remove the matches that were blanked out from the list
     sh.matches = [x for x in sh.matches if x is not None]
     return sh
@@ -296,7 +297,7 @@ def html_to_matches(soup: BeautifulSoup) -> list:
 
     if logger.isEnabledFor(logging.INFO):
         all_workers = html_to_all_workers(soup)
-    
+
     ret = []
     for m in matches:
         scores = m.find("div", {"class": "MatchRecommendedLine"})
@@ -312,7 +313,7 @@ def html_to_matches(soup: BeautifulSoup) -> list:
         appearances = []  # https://regex101.com/r/LtwojY/1
         # TODO: Handle wresters without profiles
         # Get "All workers"
-        
+
         with_blocks = []
         if "w/" in str(result):
             with_blocks = re.findall(r"\(w\/([^\)]+)", str(result))
@@ -330,7 +331,7 @@ def html_to_matches(soup: BeautifulSoup) -> list:
                 wrestlers.append(w)
             elif link_type in [ContentType.STABLE, ContentType.TAG_TEAM]:
                 teams.append(w)
-            
+
             # If we're doing info logs, check all workers
             if logger.isEnabledFor(logging.INFO) and w in all_workers:
                 all_workers.remove(w)

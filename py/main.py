@@ -1,11 +1,13 @@
 import dataclasses
+import json
+import logging
 import os
 from pathlib import Path
+
 import click
 import yaml
-import logging
+
 from parse import parse_show
-import json
 
 logger = logging.getLogger(__name__)
 
@@ -25,7 +27,7 @@ DEFAULT_LEVEL = logging.WARNING
     show_default=True,
     help="Set the Python logging level.",
 )
-def main(filename, destination, loglevel):
+def main(filename:click.File, destination:click.Path, loglevel: str):
     """
     Parse path FILENAME, outputting YAML representations of the shows
     in folder DESTINATION, which will be created if it does not
