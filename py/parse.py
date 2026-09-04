@@ -129,7 +129,7 @@ def handle_taping(taping: list) -> Show:
     :param taping: a list of shows to be passed to parse_show, each could be str or dict
     :return: a Show object
     """
-    taping_parts: list[Show] = list()
+    taping_parts: list[Show] = []
     logger.debug("Starting taping")
     for part in taping:
         taping_parts.append(parse_show(part))
@@ -155,11 +155,16 @@ def handle_partial(url, excluded_matches: list) -> Show:
     partial = parse_show(url)
     # Blank out any matches that are to be excluded
     logger.debug("Removing matches from partial show %s", partial.name)
+    new_list: list[Match|None] = list(partial.matches)
     for x in excluded_matches:
-        logger.debug("Removed match %s", partial.matches[x-1])
-        partial.matches[x-1] = None
+        if x < 0:
+            real_index = x
+        else:
+            real_index = x - 1
+        logger.debug("Removed match %s", partial.matches[real_index])
+        new_list[real_index] = None
     # Remove the matches that were blanked out from the list
-    partial.matches = [x for x in partial.matches if x is not None]
+    partial.matches = [x for x in new_list if x is not None]
     partial.partial = True
     return partial
 
@@ -239,7 +244,7 @@ def html_to_show(soup: BeautifulSoup, url: str) -> Show:
         name=show_name,
         promotion=promotion,
         arena=arena,
-        date="-".join([yy,mm,dd]),
+        date=f"{yy}-{mm}-{dd}",
         matches=matches,
     )
     logger.debug("Parsed %s to show %s", url, ret)
@@ -364,7 +369,7 @@ def html_to_all_workers(soup) -> list:
              is linked, otherwise a str.
     """
     all_workers = soup.find("div", {"class": "Comments Font9"})
-    worker_list = (u''.join(str(item) for item in all_workers)).split(",")
+    worker_list = (''.join(str(item) for item in all_workers)).split(",")
     ret = []
     for worker in worker_list:
         worker_soup = BeautifulSoup(worker, 'html.parser')
@@ -381,7 +386,7 @@ def html_to_all_workers(soup) -> list:
     return ret
 
 
-def html_to_won_score(scores) -> float:
+def html_to_won_score(scores) -> float | None:
     """
     From an input soup, search for the span containing the WON star rating, and
     convert it to a numerical score
@@ -421,7 +426,7 @@ def html_to_won_score(scores) -> float:
     return None
 
 
-def html_to_cm_score(scores) -> float:
+def html_to_cm_score(scores) -> float | None:
     """
     From an input soup, search for the text of the Cagematch matchguide rating, and
     convert it to a numerical score
