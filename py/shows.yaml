@@ -517,3 +517,5 @@
             url: https://www.cagematch.net/?id=1&nr=461502 # AEW All In London 2026 - The Buy In
             exclude: [1,5] # Missed first match in queue, remove 5th match as it's duplicated on main show
         - https://www.cagematch.net/?id=1&nr=430260 # AEW All In London 2026
+# September 2026
+- https://www.cagematch.net/?id=1&nr=462634 # ICHIBAN CRUSADE 02
