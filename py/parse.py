@@ -116,6 +116,7 @@ def handle_show_url(url: str) -> Show:
     :param url: Should be a str URL for a Cagematch show page
     :return: a Show object
     """
+    logger.warning("%s Cache should hit: %s", url, play.cache.__contains__(play.get_text.__cache_key__(url)))
     raw_html = play.get_text(url)
     soup = BeautifulSoup(raw_html, "html.parser")
     return html_to_show(soup, url)
