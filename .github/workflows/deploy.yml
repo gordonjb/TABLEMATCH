@@ -27,7 +27,10 @@ jobs:
             path: |
                 ./py/cagematch_cache.sqlite
                 ./py/cagematchcache
-            key: ${{ runner.os }}-cmcache
+            key: ${{ runner.os }}-${{ env.cache-name }}-${{ github.run_id }}- ${{ github.run_attempt }}
+            restore-keys: |
+              ${{ runner.os }}-${{ env.cache-name }}-
+              ${{ runner.os }}-cmcache
       - uses: astral-sh/setup-uv@v7
         with:
             working-directory: py
@@ -37,8 +40,6 @@ jobs:
             node-version: 22
             cache: npm
       - uses: opt-nc/setup-duckdb-action@v1.2.12
-        with:
-            version: v1.2.2
       - name: Install playwright
         working-directory: py
         run: uv run playwright install --with-deps
