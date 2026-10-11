@@ -31,16 +31,6 @@ jobs:
             key: ${{ runner.os }}-${{ env.cache-name }}-${{ github.run_id }}-${{ github.run_attempt }}
             restore-keys: |
               ${{ runner.os }}-${{ env.cache-name }}-
-              ${{ runner.os }}-cmcache
-      - name: Debug cache selection
-        env:
-          CACHE_HIT: ${{ steps.cagematch-cache.outputs.cache-hit }}
-          PRIMARY_KEY: ${{ steps.cagematch-cache.outputs.cache-primary-key }}
-          MATCHED_KEY: ${{ steps.cagematch-cache.outputs.cache-matched-key }}
-        run: |
-          echo "Cache hit: $CACHE_HIT"
-          echo "Primary key: $PRIMARY_KEY"
-          echo "Matched key: $MATCHED_KEY"
       - uses: astral-sh/setup-uv@v7
         with:
             working-directory: py
