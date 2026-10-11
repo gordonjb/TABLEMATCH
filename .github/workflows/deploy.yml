@@ -40,6 +40,8 @@ jobs:
             node-version: 22
             cache: npm
       - uses: opt-nc/setup-duckdb-action@v1.2.12
+        with:
+            version: v1.2.2
       - name: Install playwright
         working-directory: py
         run: uv run playwright install --with-deps
