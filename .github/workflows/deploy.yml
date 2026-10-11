@@ -27,7 +27,7 @@ jobs:
             path: |
                 ./py/cagematch_cache.sqlite
                 ./py/cagematchcache
-            key: ${{ runner.os }}-${{ env.cache-name }}-${{ github.run_id }}- ${{ github.run_attempt }}
+            key: ${{ runner.os }}-${{ env.cache-name }}-${{ github.run_id }}-${{ github.run_attempt }}
             restore-keys: |
               ${{ runner.os }}-${{ env.cache-name }}-
               ${{ runner.os }}-cmcache
