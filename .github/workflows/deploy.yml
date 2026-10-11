@@ -21,6 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: actions/cache@v6
+        id: cagematch-cache
         env:
             cache-name: cache-cagematch
         with:
@@ -31,6 +32,15 @@ jobs:
             restore-keys: |
               ${{ runner.os }}-${{ env.cache-name }}-
               ${{ runner.os }}-cmcache
+      - name: Debug cache selection
+        env:
+          CACHE_HIT: ${{ steps.cagematch-cache.outputs.cache-hit }}
+          PRIMARY_KEY: ${{ steps.cagematch-cache.outputs.cache-primary-key }}
+          MATCHED_KEY: ${{ steps.cagematch-cache.outputs.cache-matched-key }}
+        run: |
+          echo "Cache hit: $CACHE_HIT"
+          echo "Primary key: $PRIMARY_KEY"
+          echo "Matched key: $MATCHED_KEY"
       - uses: astral-sh/setup-uv@v7
         with:
             working-directory: py
