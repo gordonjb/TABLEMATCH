@@ -17,5 +17,5 @@ dependencies = [
 [dependency-groups]
 dev = [
     "diskcache-stubs==5.6.3.6.20240818",
-    "ruff==0.17.0",
+    "ruff==0.17.1",
 ]
