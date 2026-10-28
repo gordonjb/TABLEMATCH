@@ -519,3 +519,14 @@
         - https://www.cagematch.net/?id=1&nr=430260 # AEW All In London 2026
 # September 2026
 - https://www.cagematch.net/?id=1&nr=462634 # ICHIBAN CRUSADE 02
+# October 2026
+- https://www.cagematch.net/?id=1&nr=461694 # EVE 155: Global Thunder Queens Attack
+#- taping:
+#    name: "AEW Grand Slam Paris"
+#    urls:
+#        - partial:
+#            url: https://www.cagematch.net/?id=1&nr=464808 # ROH on HonorClub #187
+#            exclude: [3,4,5,6,7] # Also need to swap the first 2 matches
+#        - https://www.cagematch.net/?id=1&nr=461227 # AEW Dynamite #366 - Grand Slam France
+#        - https://www.cagematch.net/?id=1&nr=461226 # AEW Collision #165 - Grand Slam France # Need to swap first and last matches
+- https://www.cagematch.net/?id=1&nr=442747 # PROGRESS Chapter 199: Bonestorm
